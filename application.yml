@@ -1,0 +1,17 @@
+#Application YML
+
+spring:
+  application:
+    name: AlarmToMQ
+  activemq:
+    broker-url: tcp://192.168.99.100:32804
+    user: admin
+    password: admin
+  profiles:
+    include: native, default
+output:
+  queue:
+    activemq: TestQueue?exchangePattern=InOnly
+camel:
+  component:
+    servlet: mapping.contextPath=/routes
